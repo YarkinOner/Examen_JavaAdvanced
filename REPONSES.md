@@ -114,7 +114,7 @@ pour les champs privés ?
 
     * R1 : Par défaut, Java interdit l'accès aux champs private même via la réflexion. Sans setAccessible(true), appeler field.get(objet) lève une IllegalAccessException. setAccessible(true) lève cette restriction et permet de lire ou modifier le champ privé depuis l'extérieur de la classe.
 
-* Q2 : Cite un risque de sécurité lié à l'utilisation d setAccessible() en production.
+* Q2 : Cite un risque de sécurité lié à l'utilisation de setAccessible() en production.
 
     * R1 : Un code malveillant peut utiliser setAccessible(true) pour lire des champs private sensibles comme des mots de passe ou des clés de chiffrement, contournant totalement l'encapsulation et les contrôles d'accès de la classe.
 
