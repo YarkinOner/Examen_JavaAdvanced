@@ -12,7 +12,18 @@ Singleton · Builder · Decorator · Factory Method · Bridge · State · Chain 
 
 * Q2 : Donne une alternative plus simple et tout aussi thread-safe en Java. Pourquoi est- elle préférable ?
 
-    * R2 : 
+    * R2 : Utiliser une classe interne statique (Holder pattern)
+ ````
+ private static class Holder {
+    static final GameServer INSTANCE = new GameServer();
+}
+
+public static GameServer getInstance() {
+    return Holder.INSTANCE;
+}
+ ````
+
+C'est préférable car la JVM garantit qu'une classe statique n'est initialisée qu'une seule fois et de manière thread-safe, sans avoir besoin de synchronized ni de volatile. Le code est plus simple et moins sujet aux erreurs.
 
 * CODE : src/main/java/partie1/GameServer.java
 
